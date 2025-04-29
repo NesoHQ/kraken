@@ -3,7 +3,7 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/nesohq/kraken/internal/generator"
+	"github.com/NesoHQ/kraken/internal/generator"
 )
 
 var initCmd = &cobra.Command{

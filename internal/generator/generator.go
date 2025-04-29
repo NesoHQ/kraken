@@ -3,7 +3,7 @@ package generator
 import (
 	"fmt"
 
-	"github.com/nesohq/kraken/config"
+	"github.com/NesoHQ/kraken/config"
 )
 
 func GenerateService(serviceName string) {

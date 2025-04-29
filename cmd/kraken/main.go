@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/nesohq/kraken/cmd"
+	"github.com/NesoHQ/kraken/cmd"
 )
 
 func main() {

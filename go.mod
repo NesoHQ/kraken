@@ -1,4 +1,4 @@
-module github.com/nesohq/kraken
+module github.com/NesoHQ/kraken
 
 go 1.24.2
 
