@@ -151,21 +151,4 @@ Steps:
 
 Built with ❤️ by [NesoHQ](https://github.com/NesoHQ) for the future of open source developers.
 
-```
 
----
-
-# 📦 **After you add this README.md:**
-✅ Your GitHub repo will look clean, understandable, and professional.
-✅ New developers can install Kraken without asking you questions.
-✅ You can easily promote Kraken on Product Hunt, Reddit, Hacker News later if you want!
-
----
-
-# 📣
-👉 **Paste this README.md into your project root.**
-👉 Push it to GitHub.
-👉 Then your Kraken repo will look and feel like a real top-tier open-source project.
-
----
-```
