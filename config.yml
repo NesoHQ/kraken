@@ -1,0 +1,45 @@
+service_name: interview-qa
+package_name: interviewqa
+
+database:
+  type: postgres
+  schema: public
+
+entities:
+  - name: Question
+    table_name: questions
+    fields:
+      - name: id
+        type: uuid
+        primary: true
+      - name: title
+        type: string
+        nullable: false
+      - name: description
+        type: text
+        nullable: true
+      - name: company
+        type: string
+        nullable: true
+      - name: difficulty
+        type: enum
+        values: [easy, medium, hard]
+        nullable: false
+      - name: tags
+        type: []string
+        nullable: true
+
+  - name: Answer
+    table_name: answers
+    fields:
+      - name: id
+        type: uuid
+        primary: true
+      - name: question_id
+        type: uuid
+        foreign_key:
+          reference_entity: Question
+          reference_field: id
+      - name: content
+        type: text
+        nullable: false
