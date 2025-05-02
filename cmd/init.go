@@ -12,7 +12,7 @@ var initCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		serviceName := args[0]
-		generator.GenerateService(serviceName)
+		generator.GenerateProject(serviceName)
 	},
 }
 

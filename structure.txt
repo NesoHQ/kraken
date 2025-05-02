@@ -1,0 +1,26 @@
+.
+├── .DS_Store
+├── cmd
+│   ├── init.go
+│   ├── kraken
+│   │   └── main.go
+│   └── root.go
+├── config
+│   ├── parser.go
+│   └── sample_config.yml
+├── config.yml
+├── go.mod
+├── go.sum
+├── internal
+│   └── generator
+│       ├── file.go
+│       ├── folder.go
+│       └── generator.go
+├── LICENSE
+├── README.md
+├── structure.txt
+└── templates
+    ├── entity.tmpl
+    └── main.tmpl
+
+7 directories, 17 files

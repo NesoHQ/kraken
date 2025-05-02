@@ -2,61 +2,55 @@ package generator
 
 import (
 	"fmt"
-
-	"github.com/NesoHQ/kraken/config"
+	"os"
+	"path/filepath"
 )
 
-func GenerateService(serviceName string) {
-	cfg, err := config.LoadConfig()
-	if err != nil {
-		panic(err)
+func GenerateProject(serviceName string) {
+	dirs := []string{
+		".",
+		"apm",
+		"cache",
+		"cmd",
+		"config",
+		"docs",
+		"healthcheck",
+		"logger",
+		"metrics",
+		"repo",
+		"rest/handlers",
+		"rest/middlewares",
+		"rest/swagger",
+		"rest/utils",
+		"types",
+		"util",
+		serviceName,
 	}
 
-	// Step 1: Create folders
-	if err := CreateFolders(serviceName, cfg.PackageName); err != nil {
-		panic(err)
-	}
-	fmt.Println("✅ Created folders")
-
-	// Step 2: Generate core files
-	GenerateMain(serviceName, cfg)
-
-	// Step 3: Generate entities
-	for _, entity := range cfg.Entities {
-		GenerateEntity(serviceName, cfg.PackageName, entity)
+	for _, dir := range dirs {
+		os.MkdirAll(filepath.Join(serviceName, dir), os.ModePerm)
 	}
 
-	fmt.Println("✅ Generated service:", serviceName)
-}
-
-// GenerateMain generates the main.go from template
-func GenerateMain(serviceName string, cfg *config.ServiceConfig) {
-	err := GenerateFileFromTemplate(
-		"templates/main.tmpl",
-		fmt.Sprintf("%s/main/main.go", serviceName),
-		cfg,
-	)
-	if err != nil {
-		panic(fmt.Errorf("failed to generate main.go: %w", err))
-	}
-}
-
-// GenerateEntity generates the entity structs
-func GenerateEntity(serviceName, domainName string, entity config.Entity) {
-	data := struct {
-		PackageName string
-		Entity      config.Entity
+	files := []struct {
+		Template string
+		Output   string
 	}{
-		PackageName: domainName,
-		Entity:      entity,
+		{"Dockerfile.tmpl", "Dockerfile"},
+		{"docker-compose.yml.tmpl", "docker-compose.yml"},
+		{"go.mod.tmpl", "go.mod"},
+		{"main.tmpl", "main.go"},
+		{"Makefile.tmpl", "Makefile"},
+		{"air.toml.tmpl", ".air.toml"},
+		{"env.tmpl", ".env"},
+		{"env.tmpl", ".env.local"},
+		{"env.tmpl", ".env.example"},
+		{"gitignore.tmpl", ".gitignore"},
+		// Add more template mappings as needed
 	}
 
-	err := GenerateFileFromTemplate(
-		"templates/entity.tmpl",
-		fmt.Sprintf("%s/%s/entity/%s.go", serviceName, domainName, entity.Name),
-		data,
-	)
-	if err != nil {
-		panic(fmt.Errorf("failed to generate entity: %w", err))
+	for _, f := range files {
+		renderTemplate(filepath.Join("templates", f.Template), filepath.Join(serviceName, f.Output), serviceName)
 	}
+
+	fmt.Printf("✅ Project '%s' initialized successfully.\n", serviceName)
 }

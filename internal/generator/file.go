@@ -5,17 +5,21 @@ import (
 	"text/template"
 )
 
-func GenerateFileFromTemplate(tmplPath, outputPath string, data interface{}) error {
-	tmpl, err := template.ParseFiles(tmplPath)
+func renderTemplate(templatePath, destinationPath, serviceName string) {
+	tmpl, err := template.ParseFiles(templatePath)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
-	file, err := os.Create(outputPath)
+	f, err := os.Create(destinationPath)
 	if err != nil {
-		return err
+		panic(err)
 	}
-	defer file.Close()
+	defer f.Close()
 
-	return tmpl.Execute(file, data)
+	data := map[string]string{
+		"ServiceName": serviceName,
+	}
+
+	tmpl.Execute(f, data)
 }

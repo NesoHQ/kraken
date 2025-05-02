@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  {{.ServiceName}}:
+    build: .
+    ports:
+      - "5001:5001"
+    env_file:
+      - .env.local
+
