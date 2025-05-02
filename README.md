@@ -82,38 +82,27 @@ kraken init my-service
 ## 🏗️ Folder Structure Generated
 
 ```
-my-service/
-├── apm/
-├── cache/
-├── cmd/
-├── config/
-│   └── dbconfig.yml
-├── grpc/
-├── healthcheck/
-├── logger/
-├── main/
-│   └── main.go
-├── metrics/
-├── notification/
-├── <package_name>/
-│   ├── entity/
-│   ├── handler/
-│   ├── request/
-│   ├── response/
-│   ├── service/
-│   ├── transformer/
-│   └── usecase/
-├── provider/
-├── repo/
-├── rest/
-├── tmp/
-├── types/
-├── util/
-├── Dockerfile
-├── docker-compose.yml
-├── Makefile
-├── go.mod
-├── go.sum
+.
+├── apm
+├── cache
+├── cmd
+├── config
+├── docs
+├── healthcheck
+├── <your-service>
+├── logger
+├── metrics
+├── repo
+├── rest
+│   ├── handlers
+│   ├── middlewares
+│   ├── swagger
+│   └── utils
+├── structure.txt
+├── types
+└── util
+
+18 directories, 1 file
 ```
 
 ---

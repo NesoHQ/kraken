@@ -1,3 +1,5 @@
+This is the directory structure of the cli
+
 .
 ├── .DS_Store
 ├── cmd
@@ -20,7 +22,13 @@
 ├── README.md
 ├── structure.txt
 └── templates
+    ├── air.toml.tmpl
+    ├── docker-compose.yml.tmpl
     ├── entity.tmpl
-    └── main.tmpl
+    ├── env.tmpl
+    ├── gitignore.tmpl
+    ├── go.mod.tmpl
+    ├── main.tmpl
+    └── Makefile.tmpl
 
-7 directories, 17 files
+7 directories, 23 files
