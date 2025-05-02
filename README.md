@@ -13,13 +13,13 @@ It bootstraps fully structured microservice templates following **Domain Driven 
 
 ## 📦 Features
 
-- 📚 Domain-Driven Design (DDD) architecture
-- 🗂️ Automatic folder structure generation
-- 🛠️ Entity, Repository, Usecase, Handler, Request/Response, Transformer code scaffolding
-- ⚡ Simple YAML config-driven
-- 🚀 Supports Go Modules
-- 🐳 Docker and Docker-Compose files generated
-- 🏗️ Production-grade project structure
+-   📚 Domain-Driven Design (DDD) architecture
+-   🗂️ Automatic folder structure generation
+-   🛠️ Entity, Repository, Usecase, Handler, Request/Response, Transformer code scaffolding
+-   ⚡ Simple YAML config-driven
+-   🚀 Supports Go Modules
+-   🐳 Docker and Docker-Compose files generated
+-   🏗️ Production-grade project structure
 
 ---
 
@@ -109,11 +109,11 @@ kraken init my-service
 
 ## 🛠️ Roadmap
 
-- [x] Basic `init` command (generate microservice structure)
-- [ ] `generate entity` command (add new entities to existing service)
-- [ ] Auto-migration SQL generation
-- [ ] gRPC and REST API scaffolding
-- [ ] GitHub Action template for CI/CD setup
+-   [x] Basic `init` command (generate microservice structure)
+-   [ ] `generate entity` command (add new entities to existing service)
+-   [ ] Auto-migration SQL generation
+-   [ ] gRPC and REST API scaffolding
+-   [ ] GitHub Action template for CI/CD setup
 
 ---
 
@@ -124,9 +124,9 @@ Feel free to open issues or suggest features.
 
 Steps:
 
-- Fork the repo
-- Create a new branch
-- Submit a pull request
+-   Fork the repo
+-   Create a new branch
+-   Submit a pull request
 
 ---
 
@@ -140,4 +140,42 @@ Steps:
 
 Built with ❤️ by [NesoHQ](https://github.com/NesoHQ) for the future of open source developers.
 
+## 🏗️ Directory Structure of the cli
 
+```
+.
+├── .DS_Store
+├── cmd
+│   ├── init.go
+│   ├── kraken
+│   │   └── main.go
+│   └── root.go
+├── config
+│   ├── parser.go
+│   └── sample_config.yml
+├── config.yml
+├── go.mod
+├── go.sum
+├── internal
+│   └── generator
+│       ├── file.go
+│       ├── folder.go
+│       └── generator.go
+├── LICENSE
+├── README.md
+├── structure.txt
+└── templates
+    ├── air.toml.tmpl
+    ├── docker-compose.yml.tmpl
+    ├── entity.tmpl
+    ├── env.tmpl
+    ├── gitignore.tmpl
+    ├── go.mod.tmpl
+    ├── main.tmpl
+    └── Makefile.tmpl
+
+7 directories, 23 files
+
+```
+
+---
