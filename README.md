@@ -28,7 +28,7 @@ It bootstraps fully structured microservice templates following **Domain Driven 
 Make sure you have **Go 1.18+** installed.
 
 ```bash
-go install github.com/NesoHQ/kraken/cmd/kraken@latest
+go install github.com/NesoHQ/kraken@latest
 ```
 ````
 
