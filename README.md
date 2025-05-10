@@ -148,7 +148,7 @@ Built with ❤️ by [NesoHQ](https://github.com/NesoHQ) for the future of open 
 ├── cmd
 │   ├── init.go
 │   ├── kraken
-│   │   └── main.go
+│   │   └── kraken.go
 │   └── root.go
 ├── config
 │   ├── parser.go
